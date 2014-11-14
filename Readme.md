@@ -1,8 +1,8 @@
-[![Build Status](https://circleci.com/gh/segmentio/integration-lytics.png)](https://circleci.com/gh/segmentio/integration-lytics)
+[![Build Status](https://circleci.com/gh/segmentio/integration-lytics/tree/master.png?style=badge)](https://circleci.com/gh/segmentio/integration-lytics/tree/master)
 
-# Lytics server-side integration.
+# integration-lytics
 
-Write me...
+Lytics server-side integration for Segment.
 
 
 ## License
