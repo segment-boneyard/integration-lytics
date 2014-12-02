@@ -27,7 +27,6 @@ describe('Lytics', function(){
       .ensure('settings.apiKey')
       .ensure('settings.cid')
       .channels(['server'])
-      .retries(2);
   });
 
   describe('.validate()', function(){
