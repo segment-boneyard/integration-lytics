@@ -1,18 +1,18 @@
+'use strict';
 
 var Test = require('segmentio-integration-tester');
 var helpers = require('./helpers');
-var facade = require('segmentio-facade');
-var assert = require('assert');
-var should = require('should');
 var Lytics = require('..');
 
-describe('Lytics', function(){
+describe('Lytics', function() {
   var settings;
   var lytics;
   var test;
   var defaultTest;
+  var defaultSettings;
+  var defaultLytics;
 
-  beforeEach(function(){
+  beforeEach(function() {
     settings = {
       apiKey: 'LPv7adzJu8IhRMTbgWmaagxx',
       cid: 1289,
@@ -29,33 +29,33 @@ describe('Lytics', function(){
     defaultTest = Test(defaultLytics, __dirname);
   });
 
-  it('should have the correct settings', function(){
+  it('should have the correct settings', function() {
     test
       .name('Lytics')
       .endpoint('https://c.lytics.io/c')
       .ensure('settings.apiKey')
       .ensure('settings.cid')
-      .channels(['server'])
+      .channels(['server']);
   });
 
-  describe('.validate()', function(){
-    it('should be invalid if .cid is missing', function(){
+  describe('.validate()', function() {
+    it('should be invalid if .cid is missing', function() {
       delete settings.cid;
       test.invalid({}, settings);
     });
 
-    it('should be invalid if .apiKey is missing', function(){
+    it('should be invalid if .apiKey is missing', function() {
       delete settings.apiKey;
       test.invalid({}, settings);
     });
 
-    it('should be valid if settings are complete', function(){
+    it('should be valid if settings are complete', function() {
       test.valid({}, settings);
     });
   });
 
-  describe('.track()', function(){
-    it('should track successfully', function(done){
+  describe('.track()', function() {
+    it('should track successfully', function(done) {
       var track = helpers.track();
       var json = track.json();
 
@@ -74,8 +74,8 @@ describe('Lytics', function(){
     });
   });
 
-  describe('.identify()', function(){
-    it('should identify successfully', function(done){
+  describe('.identify()', function() {
+    it('should identify successfully', function(done) {
       var identify = helpers.identify();
       var json = identify.json();
 
@@ -94,8 +94,8 @@ describe('Lytics', function(){
     });
   });
 
-  describe('.alias()', function(){
-    it('should alias successfully', function(done){
+  describe('.alias()', function() {
+    it('should alias successfully', function(done) {
       var alias = helpers.alias();
       var json = alias.json();
 
@@ -115,8 +115,8 @@ describe('Lytics', function(){
   });
 
   // test with default values
-  describe('.track()', function(){
-    it('should track successfully', function(done){
+  describe('.track()', function() {
+    it('should track successfully', function(done) {
       var track = helpers.track();
       var json = track.json();
 
@@ -135,8 +135,8 @@ describe('Lytics', function(){
     });
   });
 
-  describe('.identify()', function(){
-    it('should identify successfully', function(done){
+  describe('.identify()', function() {
+    it('should identify successfully', function(done) {
       var identify = helpers.identify();
       var json = identify.json();
 
@@ -155,8 +155,8 @@ describe('Lytics', function(){
     });
   });
 
-  describe('.alias()', function(){
-    it('should alias successfully', function(done){
+  describe('.alias()', function() {
+    it('should alias successfully', function(done) {
       var alias = helpers.alias();
       var json = alias.json();
 
