@@ -1,6 +1,6 @@
 {
   "name": "integration-lytics",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "private": true,
   "description": "Lytics server-side integration",
   "author": "Segment <friends@segment.com>",
